@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cabinet_dentaireModelStoreContainer" CdmEntityContainer="cabinet_dentaireEntities">
+    <EntitySetMapping Name="dent">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.dent">
+        <MappingFragment StoreEntitySet="dent">
+          <ScalarProperty Name="ID_Dt" ColumnName="ID_Dt" />
+          <ScalarProperty Name="Num_Dent" ColumnName="Num_Dent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="diagnostique">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.diagnostique">
+        <MappingFragment StoreEntitySet="diagnostique">
+          <ScalarProperty Name="ID_Diag" ColumnName="ID_Diag" />
+          <ScalarProperty Name="Date_Diag" ColumnName="Date_Diag" />
+          <ScalarProperty Name="IdMedDiag" ColumnName="IdMedDiag" />
+          <ScalarProperty Name="IdDentDiag" ColumnName="IdDentDiag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employe">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.employe">
+        <MappingFragment StoreEntitySet="employe">
+          <ScalarProperty Name="ApiSecret" ColumnName="ApiSecret" />
+          <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Num_INP" ColumnName="Num_INP" />
+          <ScalarProperty Name="Nom_Emp" ColumnName="Nom_Emp" />
+          <ScalarProperty Name="Prenom_Emp" ColumnName="Prenom_Emp" />
+          <ScalarProperty Name="Titre_cour" ColumnName="Titre_cour" />
+          <ScalarProperty Name="CIN_Emp" ColumnName="CIN_Emp" />
+          <ScalarProperty Name="Fonction" ColumnName="Fonction" />
+          <ScalarProperty Name="Sexe_Emp" ColumnName="Sexe_Emp" />
+          <ScalarProperty Name="Salaire" ColumnName="Salaire" />
+          <ScalarProperty Name="Date_Embache" ColumnName="Date_Embache" />
+          <ScalarProperty Name="Date_Fin_Activite" ColumnName="Date_Fin_Activite" />
+          <ScalarProperty Name="Date_Naissance_Emp" ColumnName="Date_Naissance_Emp" />
+          <ScalarProperty Name="Type_Emp" ColumnName="Type_Emp" />
+          <ScalarProperty Name="Telephone_Emp" ColumnName="Telephone_Emp" />
+          <ScalarProperty Name="Adresse_Emp" ColumnName="Adresse_Emp" />
+          <ScalarProperty Name="Photo_Emp" ColumnName="Photo_Emp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="etat_paitent">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.etat_paitent">
+        <MappingFragment StoreEntitySet="etat_paitent">
+          <ScalarProperty Name="Num_Etat" ColumnName="Num_Etat" />
+          <ScalarProperty Name="Anesthesie" ColumnName="Anesthesie" />
+          <ScalarProperty Name="Allergie" ColumnName="Allergie" />
+          <ScalarProperty Name="Saignement" ColumnName="Saignement" />
+          <ScalarProperty Name="Enceinte" ColumnName="Enceinte" />
+          <ScalarProperty Name="Autre_Etat" ColumnName="Autre_Etat" />
+          <ScalarProperty Name="NumPatEt" ColumnName="NumPatEt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="liste_attente">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.liste_attente">
+        <MappingFragment StoreEntitySet="liste_attente">
+          <ScalarProperty Name="ID_List" ColumnName="ID_List" />
+          <ScalarProperty Name="Nom_List" ColumnName="Nom_List" />
+          <ScalarProperty Name="Prenom_List" ColumnName="Prenom_List" />
+          <ScalarProperty Name="Fonction_List" ColumnName="Fonction_List" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="login_emp">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.login_emp">
+        <MappingFragment StoreEntitySet="login_emp">
+          <ScalarProperty Name="ID_Log" ColumnName="ID_Log" />
+          <ScalarProperty Name="User_Log" ColumnName="User_Log" />
+          <ScalarProperty Name="Mot_Passe" ColumnName="Mot_Passe" />
+          <ScalarProperty Name="MatEmpL" ColumnName="MatEmpL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicament_details">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.medicament_details">
+        <MappingFragment StoreEntitySet="medicament_details">
+          <ScalarProperty Name="ID_Med" ColumnName="ID_Med" />
+          <ScalarProperty Name="Nom_Med" ColumnName="Nom_Med" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="Description_Med" ColumnName="Description_Med" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="message_emp">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.message_emp">
+        <MappingFragment StoreEntitySet="message_emp">
+          <ScalarProperty Name="ID_Msg" ColumnName="ID_Msg" />
+          <ScalarProperty Name="Date_Msg" ColumnName="Date_Msg" />
+          <ScalarProperty Name="Lire_Msg" ColumnName="Lire_Msg" />
+          <ScalarProperty Name="Content_Msg" ColumnName="Content_Msg" />
+          <ScalarProperty Name="IdLogMsg" ColumnName="IdLogMsg" />
+          <ScalarProperty Name="IdLogMsg2" ColumnName="IdLogMsg2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paitent">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.paitent">
+        <MappingFragment StoreEntitySet="paitent">
+          <ScalarProperty Name="Num_Dossier" ColumnName="Num_Dossier" />
+          <ScalarProperty Name="Nom_Pat" ColumnName="Nom_Pat" />
+          <ScalarProperty Name="Prenom_Pat" ColumnName="Prenom_Pat" />
+          <ScalarProperty Name="Sexe_Pat" ColumnName="Sexe_Pat" />
+          <ScalarProperty Name="CIN_Or_Pass" ColumnName="CIN_Or_Pass" />
+          <ScalarProperty Name="CIN_Pass" ColumnName="CIN_Pass" />
+          <ScalarProperty Name="Date_Naissance_Pat" ColumnName="Date_Naissance_Pat" />
+          <ScalarProperty Name="Adresse_Pat" ColumnName="Adresse_Pat" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nationalite" ColumnName="Nationalite" />
+          <ScalarProperty Name="Photo_Pat" ColumnName="Photo_Pat" />
+          <ScalarProperty Name="Telephone_Pat" ColumnName="Telephone_Pat" />
+          <ScalarProperty Name="Nature_Ass" ColumnName="Nature_Ass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payement">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.payement">
+        <MappingFragment StoreEntitySet="payement">
+          <ScalarProperty Name="IDPay" ColumnName="IDPay" />
+          <ScalarProperty Name="MontantPay" ColumnName="MontantPay" />
+          <ScalarProperty Name="Avance" ColumnName="Avance" />
+          <ScalarProperty Name="Datepay" ColumnName="Datepay" />
+          <ScalarProperty Name="IdPyDiag" ColumnName="IdPyDiag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rendez_vous">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.rendez_vous">
+        <MappingFragment StoreEntitySet="rendez_vous">
+          <ScalarProperty Name="ID_RDV" ColumnName="ID_RDV" />
+          <ScalarProperty Name="Date_RDV" ColumnName="Date_RDV" />
+          <ScalarProperty Name="Horaire_RDV" ColumnName="Horaire_RDV" />
+          <ScalarProperty Name="Description_RDV" ColumnName="Description_RDV" />
+          <ScalarProperty Name="NumPtRdv" ColumnName="NumPtRdv" />
+          <ScalarProperty Name="MatRDV" ColumnName="MatRDV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scanner">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.scanner">
+        <MappingFragment StoreEntitySet="scanner">
+          <ScalarProperty Name="ID_Scan" ColumnName="ID_Scan" />
+          <ScalarProperty Name="Image_Scan" ColumnName="Image_Scan" />
+          <ScalarProperty Name="IdScDiag" ColumnName="IdScDiag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_employe">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.service_employe">
+        <MappingFragment StoreEntitySet="service_employe">
+          <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+          <ScalarProperty Name="Nom_Ser" ColumnName="Nom_Ser" />
+          <ScalarProperty Name="Description_Ser" ColumnName="Description_Ser" />
+          <ScalarProperty Name="Prix_Origine" ColumnName="Prix_Origine" />
+          <ScalarProperty Name="MatServ" ColumnName="MatServ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stock">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.stock">
+        <MappingFragment StoreEntitySet="stock">
+          <ScalarProperty Name="ID_Mater" ColumnName="ID_Mater" />
+          <ScalarProperty Name="Nom_Mater" ColumnName="Nom_Mater" />
+          <ScalarProperty Name="DateDebut_Matr" ColumnName="DateDebut_Matr" />
+          <ScalarProperty Name="DateFin_Matr" ColumnName="DateFin_Matr" />
+          <ScalarProperty Name="Description_Matr" ColumnName="Description_Matr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="traiter">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.traiter">
+        <MappingFragment StoreEntitySet="traiter">
+          <ScalarProperty Name="ID_Tra" ColumnName="ID_Tra" />
+          <ScalarProperty Name="MatTrEmp" ColumnName="MatTrEmp" />
+          <ScalarProperty Name="IDTrSer" ColumnName="IDTrSer" />
+          <ScalarProperty Name="NumTrPat" ColumnName="NumTrPat" />
+          <ScalarProperty Name="IDTrDiag" ColumnName="IDTrDiag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tranche">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.tranche">
+        <MappingFragment StoreEntitySet="tranche">
+          <ScalarProperty Name="IDTra" ColumnName="IDTra" />
+          <ScalarProperty Name="Partie" ColumnName="Partie" />
+          <ScalarProperty Name="DateTra" ColumnName="DateTra" />
+          <ScalarProperty Name="IdTraPay" ColumnName="IdTraPay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tuteur">
+      <EntityTypeMapping TypeName="cabinet_dentaireModel.tuteur">
+        <MappingFragment StoreEntitySet="tuteur">
+          <ScalarProperty Name="Num_Tuteur" ColumnName="Num_Tuteur" />
+          <ScalarProperty Name="Nom_Tut" ColumnName="Nom_Tut" />
+          <ScalarProperty Name="Prenom_Tut" ColumnName="Prenom_Tut" />
+          <ScalarProperty Name="Sexe_Tut" ColumnName="Sexe_Tut" />
+          <ScalarProperty Name="Lien_Tut" ColumnName="Lien_Tut" />
+          <ScalarProperty Name="CIN_Tut" ColumnName="CIN_Tut" />
+          <ScalarProperty Name="NumPatTut" ColumnName="NumPatTut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AfficherPatient" FunctionName="cabinet_dentaireModel.Store.AfficherPatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="cabinet_dentaireModel.AfficherPatient_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

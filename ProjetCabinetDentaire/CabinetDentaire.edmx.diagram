@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44ff3ea6aeff4fe0ad140c4d34832402" Name="Diagram1">
+        <EntityTypeShape EntityType="cabinet_dentaireModel.dent" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.diagnostique" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.employe" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.etat_paitent" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.liste_attente" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.login_emp" Width="1.5" PointX="8.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.medicament_details" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.message_emp" Width="1.5" PointX="10.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.paitent" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.payement" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.rendez_vous" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.scanner" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.service_employe" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.stock" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.traiter" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.tranche" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cabinet_dentaireModel.tuteur" Width="1.5" PointX="8.25" PointY="21.125" IsExpanded="true" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IdDentDiag" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IdMedDiag" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IdPyDiag" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IdScDiag" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IDTrDiag" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_MatEmpL" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_MatRDV" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_MatServ" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_MatTrEmp" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_NumPatEt" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IdLogMsg" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IdLogMsg2" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_NumPatTut" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_PtRdv" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_TrPat" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IdTraPay" ManuallyRouted="false" />
+        <AssociationConnector Association="cabinet_dentaireModel.PK_IDTrSer" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

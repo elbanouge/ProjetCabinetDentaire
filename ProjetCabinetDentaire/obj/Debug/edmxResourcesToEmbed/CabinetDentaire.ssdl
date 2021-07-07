@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cabinet_dentaireModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dent">
+    <Key>
+      <PropertyRef Name="ID_Dt" />
+    </Key>
+    <Property Name="ID_Dt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Num_Dent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="diagnostique">
+    <Key>
+      <PropertyRef Name="ID_Diag" />
+    </Key>
+    <Property Name="ID_Diag" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Diag" Type="date" Nullable="false" />
+    <Property Name="IdMedDiag" Type="int" />
+    <Property Name="IdDentDiag" Type="int" />
+  </EntityType>
+  <EntityType Name="employe">
+    <Key>
+      <PropertyRef Name="Matricule" />
+    </Key>
+    <Property Name="Matricule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Num_INP" Type="int" />
+    <Property Name="Nom_Emp" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom_Emp" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Titre_cour" Type="varchar" MaxLength="20" />
+    <Property Name="CIN_Emp" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Fonction" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sexe_Emp" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Salaire" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Date_Embache" Type="date" Nullable="false" />
+    <Property Name="Date_Fin_Activite" Type="date" />
+    <Property Name="Date_Naissance_Emp" Type="date" Nullable="false" />
+    <Property Name="Type_Emp" Type="varchar" MaxLength="20" />
+    <Property Name="Telephone_Emp" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Adresse_Emp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo_Emp" Type="blob" />
+    <Property Name="ApiKey" Type="text" />
+    <Property Name="ApiSecret" Type="text" />
+  </EntityType>
+  <EntityType Name="etat_paitent">
+    <Key>
+      <PropertyRef Name="Num_Etat" />
+    </Key>
+    <Property Name="Num_Etat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anesthesie" Type="bit" />
+    <Property Name="Allergie" Type="bit" />
+    <Property Name="Saignement" Type="bit" />
+    <Property Name="Enceinte" Type="bit" />
+    <Property Name="Autre_Etat" Type="text" />
+    <Property Name="NumPatEt" Type="int" />
+  </EntityType>
+  <EntityType Name="liste_attente">
+    <Key>
+      <PropertyRef Name="ID_List" />
+    </Key>
+    <Property Name="ID_List" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_List" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom_List" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Fonction_List" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="login_emp">
+    <Key>
+      <PropertyRef Name="ID_Log" />
+    </Key>
+    <Property Name="ID_Log" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Log" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Mot_Passe" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MatEmpL" Type="int" />
+  </EntityType>
+  <EntityType Name="medicament_details">
+    <Key>
+      <PropertyRef Name="ID_Med" />
+    </Key>
+    <Property Name="ID_Med" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Med" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Quantite" Type="int" Nullable="false" />
+    <Property Name="Description_Med" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="message_emp">
+    <Key>
+      <PropertyRef Name="ID_Msg" />
+    </Key>
+    <Property Name="ID_Msg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Msg" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Lire_Msg" Type="bit" Nullable="false" />
+    <Property Name="Content_Msg" Type="text" Nullable="false" />
+    <Property Name="IdLogMsg" Type="int" />
+    <Property Name="IdLogMsg2" Type="int" />
+  </EntityType>
+  <EntityType Name="paitent">
+    <Key>
+      <PropertyRef Name="Num_Dossier" />
+    </Key>
+    <Property Name="Num_Dossier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Pat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom_Pat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sexe_Pat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CIN_Or_Pass" Type="bit" Nullable="false" />
+    <Property Name="CIN_Pass" Type="varchar" MaxLength="20" />
+    <Property Name="Date_Naissance_Pat" Type="date" Nullable="false" />
+    <Property Name="Adresse_Pat" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Nationalite" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Photo_Pat" Type="blob" />
+    <Property Name="Telephone_Pat" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Nature_Ass" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="payement">
+    <Key>
+      <PropertyRef Name="IDPay" />
+    </Key>
+    <Property Name="IDPay" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MontantPay" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="Avance" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="Datepay" Type="date" />
+    <Property Name="IdPyDiag" Type="int" />
+  </EntityType>
+  <EntityType Name="rendez_vous">
+    <Key>
+      <PropertyRef Name="ID_RDV" />
+    </Key>
+    <Property Name="ID_RDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_RDV" Type="date" />
+    <Property Name="Horaire_RDV" Type="time" Precision="0" />
+    <Property Name="Description_RDV" Type="text" />
+    <Property Name="NumPtRdv" Type="int" />
+    <Property Name="MatRDV" Type="int" />
+  </EntityType>
+  <EntityType Name="scanner">
+    <Key>
+      <PropertyRef Name="ID_Scan" />
+    </Key>
+    <Property Name="ID_Scan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image_Scan" Type="blob" />
+    <Property Name="IdScDiag" Type="int" />
+  </EntityType>
+  <EntityType Name="service_employe">
+    <Key>
+      <PropertyRef Name="ID_Ser" />
+    </Key>
+    <Property Name="ID_Ser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Ser" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description_Ser" Type="text" />
+    <Property Name="Prix_Origine" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="MatServ" Type="int" />
+  </EntityType>
+  <EntityType Name="stock">
+    <Key>
+      <PropertyRef Name="ID_Mater" />
+    </Key>
+    <Property Name="ID_Mater" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Mater" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateDebut_Matr" Type="date" />
+    <Property Name="DateFin_Matr" Type="date" />
+    <Property Name="Description_Matr" Type="text" />
+  </EntityType>
+  <EntityType Name="traiter">
+    <Key>
+      <PropertyRef Name="ID_Tra" />
+    </Key>
+    <Property Name="ID_Tra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MatTrEmp" Type="int" />
+    <Property Name="IDTrSer" Type="int" />
+    <Property Name="NumTrPat" Type="int" />
+    <Property Name="IDTrDiag" Type="int" />
+  </EntityType>
+  <EntityType Name="tranche">
+    <Key>
+      <PropertyRef Name="IDTra" />
+    </Key>
+    <Property Name="IDTra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Partie" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="DateTra" Type="date" />
+    <Property Name="IdTraPay" Type="int" />
+  </EntityType>
+  <EntityType Name="tuteur">
+    <Key>
+      <PropertyRef Name="Num_Tuteur" />
+    </Key>
+    <Property Name="Num_Tuteur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Tut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom_Tut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sexe_Tut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Lien_Tut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CIN_Tut" Type="varchar" MaxLength="20" />
+    <Property Name="NumPatTut" Type="int" />
+  </EntityType>
+  <Association Name="PK_IdDentDiag">
+    <End Role="dent" Type="Self.dent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="diagnostique" Type="Self.diagnostique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dent">
+        <PropertyRef Name="ID_Dt" />
+      </Principal>
+      <Dependent Role="diagnostique">
+        <PropertyRef Name="IdDentDiag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IdLogMsg">
+    <End Role="login_emp" Type="Self.login_emp" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="message_emp" Type="Self.message_emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="login_emp">
+        <PropertyRef Name="ID_Log" />
+      </Principal>
+      <Dependent Role="message_emp">
+        <PropertyRef Name="IdLogMsg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IdLogMsg2">
+    <End Role="login_emp" Type="Self.login_emp" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="message_emp" Type="Self.message_emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="login_emp">
+        <PropertyRef Name="ID_Log" />
+      </Principal>
+      <Dependent Role="message_emp">
+        <PropertyRef Name="IdLogMsg2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IdMedDiag">
+    <End Role="medicament_details" Type="Self.medicament_details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="diagnostique" Type="Self.diagnostique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medicament_details">
+        <PropertyRef Name="ID_Med" />
+      </Principal>
+      <Dependent Role="diagnostique">
+        <PropertyRef Name="IdMedDiag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IdPyDiag">
+    <End Role="diagnostique" Type="Self.diagnostique" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="payement" Type="Self.payement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="diagnostique">
+        <PropertyRef Name="ID_Diag" />
+      </Principal>
+      <Dependent Role="payement">
+        <PropertyRef Name="IdPyDiag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IdScDiag">
+    <End Role="diagnostique" Type="Self.diagnostique" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="scanner" Type="Self.scanner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="diagnostique">
+        <PropertyRef Name="ID_Diag" />
+      </Principal>
+      <Dependent Role="scanner">
+        <PropertyRef Name="IdScDiag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IdTraPay">
+    <End Role="payement" Type="Self.payement" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tranche" Type="Self.tranche" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="payement">
+        <PropertyRef Name="IDPay" />
+      </Principal>
+      <Dependent Role="tranche">
+        <PropertyRef Name="IdTraPay" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IDTrDiag">
+    <End Role="diagnostique" Type="Self.diagnostique" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="traiter" Type="Self.traiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="diagnostique">
+        <PropertyRef Name="ID_Diag" />
+      </Principal>
+      <Dependent Role="traiter">
+        <PropertyRef Name="IDTrDiag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_IDTrSer">
+    <End Role="service_employe" Type="Self.service_employe" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="traiter" Type="Self.traiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service_employe">
+        <PropertyRef Name="ID_Ser" />
+      </Principal>
+      <Dependent Role="traiter">
+        <PropertyRef Name="IDTrSer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_MatEmpL">
+    <End Role="employe" Type="Self.employe" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="login_emp" Type="Self.login_emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employe">
+        <PropertyRef Name="Matricule" />
+      </Principal>
+      <Dependent Role="login_emp">
+        <PropertyRef Name="MatEmpL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_MatRDV">
+    <End Role="employe" Type="Self.employe" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="rendez_vous" Type="Self.rendez_vous" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employe">
+        <PropertyRef Name="Matricule" />
+      </Principal>
+      <Dependent Role="rendez_vous">
+        <PropertyRef Name="MatRDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_MatServ">
+    <End Role="employe" Type="Self.employe" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="service_employe" Type="Self.service_employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employe">
+        <PropertyRef Name="Matricule" />
+      </Principal>
+      <Dependent Role="service_employe">
+        <PropertyRef Name="MatServ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_MatTrEmp">
+    <End Role="employe" Type="Self.employe" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="traiter" Type="Self.traiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employe">
+        <PropertyRef Name="Matricule" />
+      </Principal>
+      <Dependent Role="traiter">
+        <PropertyRef Name="MatTrEmp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_NumPatEt">
+    <End Role="paitent" Type="Self.paitent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="etat_paitent" Type="Self.etat_paitent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paitent">
+        <PropertyRef Name="Num_Dossier" />
+      </Principal>
+      <Dependent Role="etat_paitent">
+        <PropertyRef Name="NumPatEt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_NumPatTut">
+    <End Role="paitent" Type="Self.paitent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tuteur" Type="Self.tuteur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paitent">
+        <PropertyRef Name="Num_Dossier" />
+      </Principal>
+      <Dependent Role="tuteur">
+        <PropertyRef Name="NumPatTut" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_PtRdv">
+    <End Role="paitent" Type="Self.paitent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="rendez_vous" Type="Self.rendez_vous" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paitent">
+        <PropertyRef Name="Num_Dossier" />
+      </Principal>
+      <Dependent Role="rendez_vous">
+        <PropertyRef Name="NumPtRdv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_TrPat">
+    <End Role="paitent" Type="Self.paitent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="traiter" Type="Self.traiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paitent">
+        <PropertyRef Name="Num_Dossier" />
+      </Principal>
+      <Dependent Role="traiter">
+        <PropertyRef Name="NumTrPat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AfficherPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="cabinet_dentaire">
+    <Parameter Name="NumPat" Type="int" Mode="In" />
+    <Parameter Name="rt" Type="int" Mode="Out" />
+  </Function>
+  <EntityContainer Name="cabinet_dentaireModelStoreContainer">
+    <EntitySet Name="dent" EntityType="Self.dent" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="diagnostique" EntityType="Self.diagnostique" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="employe" EntityType="Self.employe" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="etat_paitent" EntityType="Self.etat_paitent" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="liste_attente" EntityType="Self.liste_attente" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="login_emp" EntityType="Self.login_emp" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="medicament_details" EntityType="Self.medicament_details" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="message_emp" EntityType="Self.message_emp" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="paitent" EntityType="Self.paitent" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="payement" EntityType="Self.payement" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="rendez_vous" EntityType="Self.rendez_vous" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="scanner" EntityType="Self.scanner" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="service_employe" EntityType="Self.service_employe" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="stock" EntityType="Self.stock" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="traiter" EntityType="Self.traiter" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="tranche" EntityType="Self.tranche" Schema="cabinet_dentaire" store:Type="Tables" />
+    <EntitySet Name="tuteur" EntityType="Self.tuteur" Schema="cabinet_dentaire" store:Type="Tables" />
+    <AssociationSet Name="PK_IdDentDiag" Association="Self.PK_IdDentDiag">
+      <End Role="dent" EntitySet="dent" />
+      <End Role="diagnostique" EntitySet="diagnostique" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IdLogMsg" Association="Self.PK_IdLogMsg">
+      <End Role="login_emp" EntitySet="login_emp" />
+      <End Role="message_emp" EntitySet="message_emp" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IdLogMsg2" Association="Self.PK_IdLogMsg2">
+      <End Role="login_emp" EntitySet="login_emp" />
+      <End Role="message_emp" EntitySet="message_emp" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IdMedDiag" Association="Self.PK_IdMedDiag">
+      <End Role="medicament_details" EntitySet="medicament_details" />
+      <End Role="diagnostique" EntitySet="diagnostique" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IdPyDiag" Association="Self.PK_IdPyDiag">
+      <End Role="diagnostique" EntitySet="diagnostique" />
+      <End Role="payement" EntitySet="payement" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IdScDiag" Association="Self.PK_IdScDiag">
+      <End Role="diagnostique" EntitySet="diagnostique" />
+      <End Role="scanner" EntitySet="scanner" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IdTraPay" Association="Self.PK_IdTraPay">
+      <End Role="payement" EntitySet="payement" />
+      <End Role="tranche" EntitySet="tranche" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IDTrDiag" Association="Self.PK_IDTrDiag">
+      <End Role="diagnostique" EntitySet="diagnostique" />
+      <End Role="traiter" EntitySet="traiter" />
+    </AssociationSet>
+    <AssociationSet Name="PK_IDTrSer" Association="Self.PK_IDTrSer">
+      <End Role="service_employe" EntitySet="service_employe" />
+      <End Role="traiter" EntitySet="traiter" />
+    </AssociationSet>
+    <AssociationSet Name="PK_MatEmpL" Association="Self.PK_MatEmpL">
+      <End Role="employe" EntitySet="employe" />
+      <End Role="login_emp" EntitySet="login_emp" />
+    </AssociationSet>
+    <AssociationSet Name="PK_MatRDV" Association="Self.PK_MatRDV">
+      <End Role="employe" EntitySet="employe" />
+      <End Role="rendez_vous" EntitySet="rendez_vous" />
+    </AssociationSet>
+    <AssociationSet Name="PK_MatServ" Association="Self.PK_MatServ">
+      <End Role="employe" EntitySet="employe" />
+      <End Role="service_employe" EntitySet="service_employe" />
+    </AssociationSet>
+    <AssociationSet Name="PK_MatTrEmp" Association="Self.PK_MatTrEmp">
+      <End Role="employe" EntitySet="employe" />
+      <End Role="traiter" EntitySet="traiter" />
+    </AssociationSet>
+    <AssociationSet Name="PK_NumPatEt" Association="Self.PK_NumPatEt">
+      <End Role="paitent" EntitySet="paitent" />
+      <End Role="etat_paitent" EntitySet="etat_paitent" />
+    </AssociationSet>
+    <AssociationSet Name="PK_NumPatTut" Association="Self.PK_NumPatTut">
+      <End Role="paitent" EntitySet="paitent" />
+      <End Role="tuteur" EntitySet="tuteur" />
+    </AssociationSet>
+    <AssociationSet Name="PK_PtRdv" Association="Self.PK_PtRdv">
+      <End Role="paitent" EntitySet="paitent" />
+      <End Role="rendez_vous" EntitySet="rendez_vous" />
+    </AssociationSet>
+    <AssociationSet Name="PK_TrPat" Association="Self.PK_TrPat">
+      <End Role="paitent" EntitySet="paitent" />
+      <End Role="traiter" EntitySet="traiter" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
